@@ -2,7 +2,9 @@
 
 (define (read-syntax path port)
   (define src-lines (port->lines port))
-  (datum->syntax #f '(module test1 br
-                       42)))
+  (define src-datums (format-datum '(handle ~a) src-lines))
+  (define module-datum `(module stacker-mod br
+                          ,@src-datums))
+  (datum->syntax #f '(module-datum))
 
 (provide read-syntax)
