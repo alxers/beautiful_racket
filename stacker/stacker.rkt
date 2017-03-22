@@ -23,4 +23,12 @@
 (define (stack-push! arg)
   (set! stack (cons (arg stack)))
   stack)
-  
+
+(define (handle [arg #f])
+  (cond
+    [(number? arg) (stack-push! arg)]
+    [(or (equal? + arg) (equal? * arg))
+     (define result (arg (stack-pop!) (stack-pop!)))
+     (stack-push! result)]))
+(provide handle)
+(provide + *)
