@@ -21,8 +21,7 @@
   el)
 
 (define (stack-push! arg)
-  (set! stack (cons (arg stack)))
-  stack)
+  (set! stack (cons arg stack)))
 
 (define (handle [arg #f])
   (cond
