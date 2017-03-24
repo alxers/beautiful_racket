@@ -10,7 +10,8 @@
 
 (define-macro (stacker-module-begin HANDLE-EXPR ...)
   #'(#%module-begin
-     HANDLE-EXPR ...))
+     HANDLE-EXPR ...
+     (display (first stack))))
 (provide (rename-out [stacker-module-begin #%module-begin]))
 
 (define stack '())
