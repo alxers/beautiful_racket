@@ -8,11 +8,10 @@
   (datum->syntax #f module-datum))
 (provide read-syntax)
 
-(define-macro (stacker-module-begin HANDLE-EXPR ...)
+(define-macro (stacker-module-begin HANDLE-ARGS-EXPR)
   #'(#%module-begin
-     HANDLE-EXPR ...
-     (display (first stack))))
-(provide (rename-out [stacker-module-begin #%module-begin]))
+     (display (first HANDLE-ARGS-EXPR))))
+(provide (rename-out [funstacker-module-begin #%module-begin]))
 
 (define stack '())
 
