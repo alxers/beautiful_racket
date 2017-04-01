@@ -5,3 +5,6 @@
   #'(#%module-begin
      EXPR))
 (provide (rename-out [stackerizer-mb #%module-begin]))
+
+(define-macro-cases +
+  [(+ FIRST) #'FIRST])
