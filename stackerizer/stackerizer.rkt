@@ -7,4 +7,5 @@
 (provide (rename-out [stackerizer-mb #%module-begin]))
 
 (define-macro-cases +
-  [(+ FIRST) #'FIRST])
+  [(+ FIRST) #'FIRST]
+  [(+ FIRST NEXT ...) #'(list 'dyadd FIRST (+ NEXT ...))])
