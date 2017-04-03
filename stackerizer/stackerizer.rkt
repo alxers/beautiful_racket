@@ -8,4 +8,4 @@
 
 (define-macro-cases +
   [(+ FIRST) #'FIRST]
-  [(+ FIRST NEXT ...) #'(list 'dyadd FIRST (+ NEXT ...))])
+  [(+ FIRST NEXT ...) #'(list '+ FIRST (+ NEXT ...))])
