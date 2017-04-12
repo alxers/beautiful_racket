@@ -14,3 +14,4 @@
 
 (define-op +)
 (define-op *)
+;; (define-op + *)
